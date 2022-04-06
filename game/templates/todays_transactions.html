@@ -1,0 +1,29 @@
+{% extends 'home.html' %}
+
+{% block title %}
+خریدهای امروز
+{% endblock %}
+
+
+{% block content %}
+    {% if todays_transactions %}
+    <div class="transactions-list">
+        {% for transaction in todays_transactions %}
+        <div class="transaction">
+            <a href="{% url 'game_root_name:transaction' id=transaction.id %}" style="color: white; text-decoration: none;">
+                {{transaction.show_title}}
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="no-transaction">
+        <p>امروز هیچ خریدی نداشتید</p>
+        <p>برای ثبت خرید جدید رو دکمه پایین صفحه کلیک کنید</p>
+    </div>
+    {% endif %}
+    <div class="empty">
+
+    </div>
+    <a href="../spend" class="new-spend">ثبت خرید جدید</a>
+{% endblock%}

@@ -1,0 +1,60 @@
+{% extends 'home.html' %}
+
+{% block title %}
+کتاخانه دانشمندان
+{% endblock %}
+
+
+{% block content %}
+{% for book in books %}
+<div class="book-list transaction" >
+    <h3>{{book.name}}</h3>
+    <h4>{{book.author}}</h4>
+    
+    
+    {% if book.status == 'r' %}
+    {{book.times_read}}
+    <form action="{% url 'books:change' status='t' %}" method="POST" class="again">
+        {% csrf_token %}
+        <input type="hidden" name="book_id" value={{book.id}}>
+        <input type="datetime-local" name="target" required>
+        <input type="submit" value="دوباره خواندن">
+    </form>
+    {% else %}
+        روز فرصت داری {{book.days_left}} 
+        <form action="{% url 'books:change' status='r' %}" method="POST" class="read-form">
+            {% csrf_token %}
+            <input type="hidden" name="book_id" value={{book.id}}>
+            <input type="submit" value="خواندم" class="read-btn">
+        </form>
+    {% endif %}
+
+    <form action="{% url 'books:delete'%}" class="delete-book" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="pk" value="{{book.id}}">
+        <input type="submit" value="حذف" class="delete-book">
+    </form>
+
+</div>
+{% endfor %}
+{% if not books %}
+<div class="no-book">
+    <h1>کتابی وجود ندارد</h1>
+    {% if state == 't'%}
+        <a href=".././add/"><button>افزودن</button></a>
+    {% endif %}
+</div>
+{% endif %} 
+
+{% if state == 'r' %}
+    <div class="empty">
+
+    </div>
+    <a href="../t" class="new-spend">مشاهده کتاب های خوانده نشده</a>
+{% else %}
+<div class="empty">
+
+</div>
+<a href="../r" class="new-spend">مشاهده کتاب های خوانده شده</a>
+{% endif %}
+{% endblock%}

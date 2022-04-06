@@ -1,0 +1,22 @@
+{% extends 'home.html' %}
+
+{% block title %}
+ورود
+{% endblock %}
+
+
+{% block content %}
+    <div class="spend-container">
+        <form action="{% url 'accounts:signin' %}" method="POST" class="spend-form">
+            <h3 class="note" style="color: red;">پر کردن همه فیلدها لازم است **</h3>
+            {% csrf_token %}
+            نام {{form.first_name}}
+            نام خانوادگی {{form.last_name}}
+            نام کاربری {{form.username}}
+            رمز عبور {{form.password1}}
+            تایید رمز عبور {{form.password2}}
+            <p>حساب کاربری دارید <a href="../login" class = "signin-link">ورود</a></p>
+            <input type="submit" value="ورود">
+        </form>
+    </div>
+{% endblock%}

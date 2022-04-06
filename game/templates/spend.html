@@ -1,0 +1,17 @@
+{% extends 'home.html' %}
+
+{%block title%}
+ثبت پرداخت
+{% endblock %}
+
+{% block content %}
+<div class="spend-container">
+    <form action="{% url 'game_root_name:spend' %}" method = "POST" class="spend-form">
+        {% csrf_token %}
+        عنوان {{form.title}}
+        قابل پرداخت {{form.amount}}
+        توضیحات {{form.description}}
+        <input type="submit", value ="پرداخت" class="spend-submit">
+    </form>
+</div>
+{% endblock%}   

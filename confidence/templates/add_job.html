@@ -1,0 +1,15 @@
+{% extends 'home.html' %}
+
+{% block title %}
+یه کار خفن دیگه
+{% endblock %}
+
+{% block content %}
+<div class="spend-container">
+    <form action="{% url 'confidence:add'%}" method="POST" class="spend-form">
+        {% csrf_token %}
+        یه کار خفن دیگه{{ form.job }}
+        <input type="submit" value="ثبت خفنیها">
+    </form>
+</div>
+{% endblock %}

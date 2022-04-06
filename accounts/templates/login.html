@@ -1,0 +1,18 @@
+{% extends 'home.html' %}
+
+{% block title %}
+ورود
+{% endblock %}
+
+
+{% block content %}
+    <div class="spend-container">
+        <form action="{% url 'accounts:login' %}" method="POST" class="spend-form">
+            {% csrf_token %}
+            نام کاربری {{form.username}}
+            رمز عبور {{form.password}}
+            <p>حساب کاربری ندارید <a href="../signin" class = "signin-link">ثبت نام</a></p>
+            <input type="submit" value="ورود">
+        </form>
+    </div>
+{% endblock%}

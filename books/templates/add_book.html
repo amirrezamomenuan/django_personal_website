@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کتاب های جدید</title>
+</head>
+<body>
+
+{% extends 'home.html' %}
+
+{% block title %}
+کتاخانه دانشمندان
+{% endblock %}
+
+
+{% block content %}
+<div class="spend-container">
+    <form action="{% url 'books:add' %}" style="display: flex;flex-direction: column;" method="POST" class="spend-form">
+        {% csrf_token %}
+        نام کتاب {{form.name}}
+        نام نویسنده {{form.author}}
+        تاریخ هدف    
+        (مثال : 02-02-2022)
+        {{form.target}}
+        <input type="submit" value="وارد کردن یه کتاب جدید">
+    </form>
+</div>
+{% endblock%}

@@ -1,0 +1,248 @@
+body {
+    background-color: #fcf7ed;
+}
+
+header {
+    background-color: #f2a900;
+    color: rgb(43, 19, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+}
+
+header a {
+    color: #fcf7ed;
+    text-decoration: none;
+    font-size: 1.5rem;
+    border-bottom: 3px solid #f2a900;
+    transition: ease-in-out .2s;
+}
+
+header a:hover{
+    border-bottom: 3px solid #fcf7ed;
+    
+}
+
+.spend-form{
+    background-color: #f1c459;
+    border-radius: 15px;
+    color: #fcf7ed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    outline: transparent;
+    padding: 35px;
+    width: 30%;
+    height: 100%;
+    font-size: 1.25rem;
+    box-shadow: #d39a17 10px 15px 40px;
+    border: 2px solid #f7bb30;
+}
+.spend-form input, .spend-form textarea {
+    background-color: #fcf7ed;
+    border-radius: 15px;
+    border: 2px solid #f1c459;
+    width: 80%;
+    height: 35px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    box-shadow: #f2a900 5px 5px 5px;
+    transition: ease-in-out .1s;
+    text-align: center;
+    color: #e48100;
+}
+
+.spend-form textarea{
+    height: 65px;
+}
+
+.spend-form input:focus, .spend-form textarea:focus {
+    outline: none;
+    box-shadow: #c98e04 7px 7px 7px;
+    transform: scale(1.02);
+}
+
+.spend-container{
+    background-color:#fcf7ed ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+input[type = 'submit'] ,button{
+    margin-top: 35px;
+    height: 40px;
+    width:60% ;
+    background-color: #f2a900;
+    color:#fcf7ed ;
+    font-size: 1.5rem;
+    box-shadow: #c48a04 6px 6px 6px;
+    transition: ease-in-out .1s;
+}
+input[type = 'submit']:hover , button:hover{
+    box-shadow: #c08806 8px 8px 8px;
+    transform: scale(1.025);
+}
+
+
+.transaction {
+    background-color: #f1c459;
+    /* padding: 10px; */
+    padding-right: 15px;
+    margin: 5px;
+    margin-top: 15px;
+    text-align: right;
+    display: flex;
+    box-shadow: #cf9100 2px 3px 5px;
+    transition: ease-in-out .025s;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.transaction a{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    padding-left: 45px;
+}
+
+.transaction:hover {
+    transform:scaley(1.05);
+    transform: scale(1.005, 1.08);
+    box-shadow: #cf9100 3px 4px 5px;
+}
+.empty{
+    display: block;
+    height: 100px;
+    content: none;
+    display: flex;
+}
+
+.new-spend{
+    background-color: #f2a900;
+    position: fixed;
+    bottom: -5px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 12%;
+    padding-left: 0px;
+    margin-right: 10px;
+    border-radius: 7px;
+    color: #fcf7ed;
+    text-decoration: none;
+    font-size: 2.5rem;
+    transition: ease-in-out .1s;
+    word-spacing: 2px;
+    box-shadow: #d6990b 5px 5px 10px 5px;
+    border-top: solid 2px #f2a900;
+}
+
+.new-spend:hover{
+    bottom: 0px;
+}
+
+.no-transaction{
+    font-size: 2rem;
+    color: #e48100;
+    text-align: center;
+}
+
+.signin-link{
+    color: #c93900;
+}
+.no-book{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+.no-book h1{
+    color:#e48100 ;
+    font-size: 2.5rem;
+}
+.no-book a{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+.no-book button{
+    margin : 0px;
+    border: transparent;
+    border-radius: 5px;
+}
+
+.book-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.delete-book , .read-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85px;
+    font-size: 1rem;
+}
+
+.delete-book input, .book-list .read-form .read-btn{
+    margin: 0px;
+    margin-top: 0px;
+    background-color: #f2a900;
+    border: transparent;
+    border-radius: 5px;
+    width: 65px;
+    box-shadow: #c08806 1px 1px 3px 1px;
+}
+
+.delete-book input:hover, .book-list .read-form .read-btn:hover{
+    background-color: rgb(241, 58, 25);
+    transform: none;
+    box-shadow: #c08806 1px 1px 3px 1px;
+
+}
+.book-list .read-form .read-btn:hover{
+    background-color: green;
+}
+
+.book-list .again input{
+    /* background-color: red; */
+    justify-content: center;
+    align-items: center;
+    margin: 7px;
+    border-radius: 5PX;
+    border: none;
+}
+
+.conf-btn{
+    border: transparent;
+    border-radius: 7px;
+    width: 100%;
+    height: 50px;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.transactions-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
